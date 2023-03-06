@@ -12,3 +12,6 @@
 ## Tips
 If you want to use the app from anywhere, make an alias for `node {tsaker_folder}`.
 
+## Docs
+
+[Shell commands](/docs/shell_commands.md)

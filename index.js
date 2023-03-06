@@ -32,12 +32,13 @@ if (process.argv[2]) {
 	switch (process.argv[2]) {
 		case "get_raw":
 			console.log(JSON.stringify(tasks));
+			process.exit(0);
 			break;
 		case "show_tasks":
 			showTasks(true);
+			process.exit(0);
 			break;
 	}
-	process.exit(0);
 }
 function showTasks(first) {
 	if (tasks.length <= 0)
@@ -112,12 +113,12 @@ function moveTaskJob(args) {
 	let iOne = parseInt(args[1]);
 	if (Number.isNaN(iOne))
 		return console.log(
-			`${"×".rgb({ fg: [200, 10, 10] })} | Invalid indexOne number`
+			`${"×".rgb({ fg: [200, 10, 10] })} | Invalid from index`
 		);
 	let iTwo = parseInt(args[2]);
 	if (Number.isNaN(iTwo))
 		return console.log(
-			`${"×".rgb({ fg: [200, 10, 10] })} | Invalid indexTwo number`
+			`${"×".rgb({ fg: [200, 10, 10] })} | Invalid to index`
 		);
 	iOne--;
 	iTwo--;
@@ -137,16 +138,16 @@ async function input(message) {
 		case "help":
 			console.log(
 				`List of commands:\n` +
-					`	help               | shows this message\n` +
-					`	list               | shows the list of your tasks\n` +
-					`	add [goal...]      | adds a task to the tasks list\n` +
-					`	remove [index]     | removes a task on the specified index\n` +
-					`	move [ifrom] [ito] | swaps the indexes of tasks\n` +
-					`	toggle [index]     | toggles a task on the specified index\n` +
-					`	raw                | prints the raw object of your tasks\n` +
-					`	clear              | clears all of your tasks\n` +
-					`	save               | saves your tasks\n` +
-					`	exit               | saves & exits the program`
+					`	help             | shows this message\n` +
+					`	list             | shows the list of your tasks\n` +
+					`	add [goal...]    | adds a task to the tasks list\n` +
+					`	remove [index]   | removes a task on the specified index\n` +
+					`	move [from] [to] | swaps the indexes of tasks\n` +
+					`	toggle [index]   | toggles a task on the specified index\n` +
+					`	raw              | prints the raw object of your tasks\n` +
+					`	clear            | clears all of your tasks\n` +
+					`	save             | saves your tasks\n` +
+					`	exit [no_save]   | saves & exits the program`
 			);
 			break;
 		case "ls":
@@ -205,4 +206,4 @@ async function input(message) {
 	const answer = await rl.question("> ");
 	input(answer);
 }
-input("list");
+input(process.argv[2] ?? "list");

@@ -1,4 +1,4 @@
-# shell commands
+# Shell commands
 Further in the file, `tsaker` is the alias to run tsaker
 
 
@@ -7,11 +7,11 @@ Further in the file, `tsaker` is the alias to run tsaker
 ```sh
 tsasker get_raw
 ```
-Always returns an array, if there are tasks then yeah
+Outputs an array of tasks
 
 
 ## Show tasks formatted
 ```sh
 tsaker show_tasks
 ```
-Shows a formatted list of tasks (same as if you used the command `list`). Useful for showing tasks in bashrc
+Outputs a formatted list of tasks (same as if you used the command `list`). Useful for showing tasks in bashrc

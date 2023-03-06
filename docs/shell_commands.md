@@ -5,9 +5,9 @@ Further in the file, `tsaker` is the alias to run tsaker
 
 ## Get raw tasks array
 ```sh
-tsasker get_raw
+tsaker get_raw
 ```
-Outputs an array of tasks
+Outputs an array of tasks, which may be empty
 
 
 ## Show tasks formatted

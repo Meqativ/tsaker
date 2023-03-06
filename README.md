@@ -1,5 +1,5 @@
 # tsaker
-blazingly slow todo list cli
+## blazingly slow todo list app
 
 Install:
 

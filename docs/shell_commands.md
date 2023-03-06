@@ -5,7 +5,7 @@ Further in the file, `tsaker` is the alias to run tsaker
 
 ## Get raw tasks array
 ```sh
-tasker get_raw
+tsasker get_raw
 ```
 Always returns an array, if there are tasks then yeah
 
